@@ -1,0 +1,21 @@
+.form__window_button-signin {
+    margin-top: 179px;
+    width: 396px;
+    height: 45px;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    color: #FFFFFF;
+    border: none;
+    background-color: #4285F4;
+    border-radius: 3px;
+}
+
+@media screen and (max-width: 460px) {
+    .form__window_button-signin {
+        margin-top: 309px;
+        width: 260px;
+        font-size: 12px;
+        line-height: 15px;
+    }
+}

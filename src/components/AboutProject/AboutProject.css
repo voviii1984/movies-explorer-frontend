@@ -1,0 +1,164 @@
+.about__project {
+    background-color: #202020;
+    padding: 110px 70px 0 70px;    
+}
+
+.about__project_table {
+    display: flex;
+    margin-top: 70px;
+}
+
+.about__project_table_section {
+    margin-right: 40px;
+}
+
+.about__project_table_section:last-of-type {
+    margin-right: 0;
+}
+
+.about__project_title {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 24px;
+    color: #FFFFFF;
+    margin: 0;
+    padding-bottom: 26px;
+}
+
+.about__project_subtitle {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 20px;
+    color: #FFFFFF;
+    margin: 0;
+}
+
+.about__project_period {
+    display: grid;
+    grid-template-columns: 228px 1fr;
+    margin-top: 110px;
+    padding-bottom: 110px;
+}
+
+.about__project_period_time-backend {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+    color: #000000;
+    background-color: #3DDC84;
+    width: 228px;
+    height: 36px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    margin: 0;    
+}
+
+.about__project_period_time-frontend {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+    color: #FFFFFF;
+    background-color: #303030;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    margin: 0;
+}
+
+.about__project_period_backend-forntend {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    color: #8B8B8B;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    margin: 0;
+    padding-top: 14px;
+}
+
+@media screen and (max-width: 768px) {
+    .about__project {
+        padding: 90px 50px 0 50px;    
+    }
+
+    .about__project_subtitle {
+        font-size: 12px;
+        line-height: 18px;
+    }
+
+    .about__project_period {
+        grid-template-columns: 140px 1fr;
+        margin-top: 93px;
+        padding-bottom: 90px;
+    }
+
+    .about__project_period_time-backend {
+        width: 140px;
+    }
+
+    .about__project_period_backend-forntend {
+        font-weight: normal;
+    }
+}
+
+@media screen and (max-width: 390px) {
+    .about__project {
+        padding: 70px 18px 0 18px;    
+    }
+
+    .about__project_table {
+        display: block;
+        margin-top: 60px;
+    }
+
+    .about__project_table_section {
+        margin-right: 0;
+        margin-bottom: 56px;
+    }
+    
+    .about__project_table_section:last-of-type {
+        margin-bottom: 0;
+    }
+
+    .about__project_title {
+        font-size: 18px;
+        line-height: 22px;
+        padding-bottom: 16px;
+    }
+
+    .about__project_subtitle {
+        font-size: 11px;
+        line-height: 16px;
+    }
+
+    .about__project_period {
+        grid-template-columns: 100px 1fr;
+        margin-top: 60px;
+        padding-bottom: 70px;
+    }
+
+    .about__project_period_time-backend {
+        width: 100px;
+        height: 35px;
+        font-size: 11px;
+        line-height: 13px;
+    }
+
+    .about__project_period_time-frontend {
+        font-size: 11px;
+        line-height: 13px;        
+    }
+
+    .about__project_period_backend-forntend {
+        font-size: 11px;
+        line-height: 13px;
+        color: #A0A0A0;
+    }
+}

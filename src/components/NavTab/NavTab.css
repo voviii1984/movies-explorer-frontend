@@ -1,0 +1,33 @@
+.promo__button {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 16px;
+    color: #FFFFFF;
+    border: 1px solid rgba(255, 255, 255, 0.6);;
+    border-radius: 3px;
+    width: 129px;
+    height: 36px;
+    background-color: #073042;
+    margin: 84px 0 75px 0;
+    cursor: pointer;
+}
+
+.promo__button:hover {
+    opacity: 0.8;
+}
+
+@media screen and (max-width: 900px) {
+    .promo__button {
+        margin: 82px auto 0 auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+@media screen and (max-width: 390px) {
+    .promo__button {
+        margin: 80px auto 0 auto;        
+    }
+}
