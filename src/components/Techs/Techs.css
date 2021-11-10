@@ -1,0 +1,113 @@
+.techs {
+    background-color: #272727;
+    padding: 100px 70px 0 70px;
+}
+
+.techs__title {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 50px;
+    line-height: 58px;
+    text-align: center;
+    color: #FFFFFF;
+    margin: 90px auto 0 auto;
+}
+
+.techs__subtitle {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 20px;
+    text-align: center;
+    margin: 26px auto 0 auto;
+    color: #FFFFFF;
+    max-width: 460px;
+}
+
+.techs__about {
+    display: flex;
+    justify-content: center;
+    margin-top: 87px;
+    padding-bottom: 100px;
+}
+
+.techs__about_icon {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+    color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #303030;
+    width: 90px;
+    height: 60px;
+    border-radius: 10px;
+    margin-right: 10px;
+}
+
+@media screen and (max-width: 768px) {
+    .techs {
+        padding: 90px 50px 0 50px;
+    }
+
+    .techs__title {
+        margin: 80px auto 0 auto;
+    }
+
+    .techs__subtitle {
+        font-size: 12px;
+        line-height: 18px;        
+        margin: 22px auto 0 auto;
+    }
+
+    .techs__about {
+        margin-top: 83px;
+        padding-bottom: 90px;
+    }
+
+    .techs__about_icon {        
+        font-size: 12px;
+        line-height: 15px;        
+        width: 84px;
+        height: 57px;
+    }
+}
+
+@media screen and (max-width: 760px) {
+    .techs__about {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, 84px);
+        justify-content: center;
+        gap: 10px;        
+    }
+
+    .techs__about_icon {
+        margin: 0;
+    }
+}
+
+@media screen and (max-width: 390px) {
+    .techs {
+        padding: 70px 18px 0 18px;
+    }
+
+    .techs__about {
+        margin-top: 50px;
+        padding-bottom: 70px;      
+        grid-template-columns: repeat(2, 84px);                
+    }
+
+    .techs__title {
+        font-size: 30px;
+        line-height: 36px;        
+        margin: 60px auto 0 auto;
+    }
+
+    .techs__subtitle {
+        font-size: 11px;
+        line-height: 16px;        
+        margin: 24px auto 0 auto;
+    }
+}
