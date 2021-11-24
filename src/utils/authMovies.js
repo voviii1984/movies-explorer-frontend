@@ -1,6 +1,5 @@
-//import { options } from '../components/Constants/Constant';
-//export const BASE_URL = options.baseUrl;
-export const BASE_URL = 'http://localhost:3000';
+import { optionsMain } from '../components/Constants/Constant';
+export const BASE_URL = optionsMain.baseUrl
 
 const checkResponse = (response) => {
   return response.ok ? response.json() : Promise.reject(new Error(`Ошибка ${response.status}: ${response.statusText}`));
