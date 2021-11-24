@@ -1,41 +1,61 @@
-import {useState} from 'react';
+import { useState } from 'react';
 import './Login.css';
+import Preloader from '../Preloader/Preloader';
 import EntryWindowForm from '../EntryWindowForm/EntryWindowForm';
+import { useFormWithValidation } from '../Validation/UseFormWithValidation';
+import {MESSAGE} from '../../utils/constants';
 
-function Login({ onLogin }) {
+function Login({ onLogin, isLoading }) {
 
-    const [loginData, setLoginData] = useState({
-        email: '',
-        password: '',
-      });
-    
-      const handleChange = (evt) => {
-        const { name, value } = evt.target;
-        setLoginData({
-          ...loginData,
-          [name]: value,
-        });
-      };
+  const { values, handleChange, errors, isValid } = useFormWithValidation({
+    email: "",
+    password: "",
+  });
 
-      const handleSubmit = (evt) => {
-        evt.preventDefault();
-        onLogin(loginData);
-      };
+  const [visible, setVisible] = useState({
+    email: false,
+    password: false,
+  });
 
-    return (
-      <EntryWindowForm handleSubmit={handleSubmit} buttonSign='button-signin' welcome='Рады видеть!' nameButton='Войти' signText='Ещё не зарегистрированы?' signin="/signup" nameLink="Регистрация">      
-      <fieldset className="form-register">
-        <p className="register__name">E-mail</p>
-        <input id="email" className="register__form-text" placeholder='Email' name="email" type="email" autoComplete="email" value={loginData.email || ""} required
-          onChange={handleChange} />
-        <p className="register__name">Пароль</p>
-        <input id="password" className="register__form-text" placeholder='Пароль' name="password" type="password" autoComplete="new-password" value={loginData.password || ""}
-          required
-          onChange={handleChange} />
-        <span id="inputPasswordError" className="error">Что-то пошло не так...</span>
-      </fieldset>        
-  </EntryWindowForm>
-    )
+  const handleSubmit = (evt) => {
+    evt.preventDefault();
+    onLogin(values);
+  };
+
+  function onBlur(evt) {
+    const name = evt.target.name;
+    setVisible({ ...visible, [name]: true });
+  }
+
+  return (
+    <>
+      {isLoading ? ( <Preloader /> ) :
+        (
+          <EntryWindowForm 
+          handleSubmit={handleSubmit} 
+          buttonSign='button-signin' 
+          welcome='Рады видеть!' 
+          nameButton='Войти' 
+          signText='Ещё не зарегистрированы?' 
+          signin="/signup" 
+          nameLink="Регистрация"
+          errors={errors}
+          isValid={isValid}
+          >
+            <fieldset className="form-register">
+              <p className="register__name">E-mail</p>
+              <input id="email" className="register__form-text" placeholder='Email' name="email" type="email" autoComplete="email" required
+                onChange={handleChange} onBlur={onBlur}/>
+                <span id="inputPasswordError" className="error">{visible.email && errors.email && `${errors.email} ${MESSAGE.FORM.EMAIL}`}</span>
+              <p className="register__name">Пароль</p>
+              <input id="password" className={!errors.password ? "register__form-text" : "register__form-text register__form-text_color"} placeholder='Пароль' name="password" type="password" autoComplete="new-password" 
+                required onChange={handleChange} onBlur={onBlur}/>
+              <span id="inputPasswordError" className="error">{visible.password && errors.password && `${errors.password} ${MESSAGE.FORM.PASSWORD}`}</span>
+            </fieldset>
+          </EntryWindowForm>
+        )}
+    </>
+  )
 }
 
 export default Login;

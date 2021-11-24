@@ -1,25 +1,50 @@
 import './SavedMovies.css';
 import SearchForm from '../SearchForm/SearchForm';
+import Preloader from '../Preloader/Preloader';
 import MoviesCardList from '../MoviesCardList/MoviesCardList';
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
 
-function SavedMovies(props) {
+function SavedMovies({
+    deleteMovie,
+    handelChangeCheckbox,
+    isShortMovies,
+    getMovies,
+    notFound,
+    isLoading,
+    isLoggedIn,
+    onAddPlace,
+    showSavedMovies,
+}) {
     const deleteCard = "movies__delete";
     return (
         <section className="saved__movies">
             <Header
-            page="page"
-            isLoggedIn={props.isLoggedIn}
-            onAddPlace={props.onAddPlace}
+                page="page"
+                isLoggedIn={isLoggedIn}
+                onAddPlace={onAddPlace}
             />
-            <SearchForm />
-
-            <MoviesCardList
-                type="reset"
-                name="Delete"
-                deleteCard={deleteCard}
+            <SearchForm
+                handelChangeCheckbox={handelChangeCheckbox}
+                isShortMovies={isShortMovies}
+                savedMovies={true}
+                place={localStorage.savedMovies}
+                getMovies={getMovies}
             />
+            {!notFound && isLoading ? (
+                <Preloader />
+            ) : (
+                <MoviesCardList
+                    typeButton="reset"
+                    nameButton="Delete"
+                    path="savedMovies"
+                    cardLikeButtonClassName={deleteCard}
+                    deleteMovie={deleteMovie}
+                    notFound={notFound}
+                    isNumberOfCards={showSavedMovies.length}
+                    displayingMovies={showSavedMovies}
+                />
+            )}
             <Footer />
         </section>
     )

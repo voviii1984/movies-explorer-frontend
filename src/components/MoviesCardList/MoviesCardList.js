@@ -1,45 +1,55 @@
 import './MoviesCardList.css';
 import MoviesCard from '../MoviesCard/MoviesCard';
-import movie1 from '../../images/movie1.png'
-import movie2 from '../../images/movie2.png'
-import movie3 from '../../images/movie3.png'
-import movie4 from '../../images/movie4.png'
 
-function MoviesCardList(props) {
+function MoviesCardList({
+    isAllSavedMovies,
+    createMovie,
+    path,
+    deleteMovie,
+    movies,
+    notFound,
+    displayingMovies,
+    showSavedMovies,
+    cardLikeButtonClassName,
+    isNumberOfCardsAdd,
+    isNumberOfCards,
+    setIsNumberOfCards,
+    typeButton,
+    nameButton,
+  }) {
+    
+  let moviesRender = [...displayingMovies];
+  moviesRender.length = isNumberOfCards;
+  const moreButtonVisible = moviesRender.length < displayingMovies.length;
+
+  function handleMore() {
+    return setIsNumberOfCards(isNumberOfCardsAdd + isNumberOfCards);
+  }
+
     return (
         <section className="movies__card-list">
+            {!notFound && (
+        <>
+          {moviesRender.map((card) => (
             <MoviesCard
-                type={props.type}
-                name={props.name}
-                like={props.like}
-                deleteCard={props.deleteCard}
-                foto={movie1}
+              isAllSavedMovies={isAllSavedMovies}
+              showSavedMovies={showSavedMovies}
+              createMovie={createMovie}
+              card={card}
+              path={path}
+              deleteMovie={deleteMovie}
+              key={card.id || card._id}
+              cardLikeButtonClassName={cardLikeButtonClassName}
+              typeButton={typeButton}
+              nameButton={nameButton}
             />
-
-            <MoviesCard
-                type={props.type}
-                name={props.name}
-                like={props.like}
-                deleteCard={props.deleteCard}
-                foto={movie2}
-            />
-
-            <MoviesCard
-                type={props.type}
-                name={props.name}
-                like={props.like}
-                deleteCard={props.deleteCard}
-                foto={movie3}
-            />
-
-            <MoviesCard
-                type={props.type}
-                name={props.name}
-                like={props.like}
-                deleteCard={props.deleteCard}
-                foto={movie4}
-            />
-            <button tape="submit" className="search__more">Ещё</button>
+          ))}
+        </>
+      )}
+            {notFound && <p className="movies__card_not-found">Ничего не найдено</p>}
+      {movies && moreButtonVisible && (
+            <button tape="submit" className="search__more" onClick={handleMore}>Ещё</button>
+            )}
         </section>
     )
 }

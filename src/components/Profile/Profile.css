@@ -21,7 +21,7 @@
     border-bottom: 1px solid #424242;
     padding-bottom: 16px;
     padding-top: 17px;
-}
+}    
 
 .profile__aboute_user:first-of-type {
     padding-top: 0;
@@ -39,7 +39,7 @@
     line-height: 13px;
     color: #FFFFFF;
     margin: 0;
-    min-width: 141px;
+    
 }
 
 .profile__aboute_user-change {
@@ -52,7 +52,7 @@
     background-color: #202020;
     border: none;
     direction: rtl;
-    width: 100%;
+    min-width: 300px;
 }
 
 .profile__aboute_button {
@@ -72,6 +72,17 @@
     line-height: 16px;
     color: #FFFFFF;
     cursor: pointer;
+}
+
+.profile__aboute_edid-valid {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 13px;
+    line-height: 16px;
+    cursor: not-allowed;
+    color: #424242;
+    background-color: #202020;
+    border: none;
 }
 
 .profile__aboute_edit:hover {
@@ -130,5 +141,9 @@
     .profile__aboute_out {
         font-size: 12px;
         line-height: 15px;
+    }
+
+    .profile__aboute_user-change {
+        min-width: 178px;
     }
 }

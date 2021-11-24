@@ -1,5 +1,6 @@
-import { options } from '../components/Constants/Constant';
-export const BASE_URL = options.baseUrl;
+//import { options } from '../components/Constants/Constant';
+//export const BASE_URL = options.baseUrl;
+export const BASE_URL = 'http://localhost:3000';
 
 const checkResponse = (response) => {
   return response.ok ? response.json() : Promise.reject(new Error(`Ошибка ${response.status}: ${response.statusText}`));
@@ -30,13 +31,10 @@ export const authorize = ({ email, password }) => {
     .then((res) => checkResponse(res));
 };
 
-export const getContent = () => {
-  return fetch(`${BASE_URL}/users/me`, {
-    headers,
-    method: 'GET',
+export const signOut = () => {
+  return fetch(`${BASE_URL}/users/signout`, {
+    method: 'POST',
     credentials: 'include',
-  }).then((res) => {
-    
-    return checkResponse(res);    
-  });
+  })
+    .then((res) => checkResponse(res));
 };
