@@ -51,11 +51,11 @@ function Register({ onRegister, isLoading }) {
             onChange={handleChange} onBlur={onBlur}/>
           <span id="inputNameError" className="error">{visible.name && errors.name && `${errors.name} ${MESSAGE.FORM.NAME}`}</span>
           <p className="register__name">E-mail</p>
-          <input id="email" className="register__form-text" placeholder='Email' name="email" type="email" autoComplete="email" required
+          <input id="email" className="register__form-text" pattern="[A-Za-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" placeholder='Email' name="email" type="email" autoComplete="email" required
             onChange={handleChange} onBlur={onBlur}/>
           <span id="inputEmailError" className="error">{visible.email && errors.email && `${errors.email} ${MESSAGE.FORM.EMAIL}`}</span>
           <p className="register__name">Пароль</p>
-          <input id="password" className={!errors.password ? "register__form-text" : "register__form-text register__form-text_color"} placeholder='Пароль' name="password" type="password" autoComplete="new-password" 
+          <input id="password" className={!errors.password ? "register__form-text" : "register__form-text register__form-text_color"} minlength="4" maxlength="20" placeholder='Пароль' name="password" type="password" autoComplete="new-password" 
             required
             onChange={handleChange} onBlur={onBlur}/>
           <span id="inputPasswordError" className="error">{visible.password && errors.password && `${errors.password} ${MESSAGE.FORM.PASSWORD}`}</span>

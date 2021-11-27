@@ -10,11 +10,11 @@ function Navigation(props) {
                         <NavLink to="/movies" activeClassName="header__text-login_active" className="header__text-login" >Фильмы</NavLink>
                         <NavLink to="/saved-movies" activeClassName="header__text-login_active" className="header__text-login" >Сохранённые фильмы</NavLink>
                         <Link to="/profile" className="profile__text-login" >
-                            Аккаунт
-                            <div className="profile__account"></div>
+                            {props.account}
+                            <div className={`profile__account_${props.image}`}></div>
                         </Link>
                     </div>
-                    <button className="header__menu-burger" onClick={props.onAddPlace}></button>
+                    <button className={`header__menu-burger ${props.color}`} onClick={props.onAddPlace}></button>
                 </>
             ) : (
                 <>

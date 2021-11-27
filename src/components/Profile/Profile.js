@@ -42,6 +42,8 @@ function Profile({
         page="page"
         isLoggedIn={isLoggedIn}
         onAddPlace={onAddPlace}
+        account="Аккаунт"
+        image="all-image"
       />
       {isLoading && <Preloader />}
       {!isLoading && (

@@ -23,6 +23,8 @@ function SavedMovies({
                 page="page"
                 isLoggedIn={isLoggedIn}
                 onAddPlace={onAddPlace}
+                account="Аккаунт"
+                image="all-image"
             />
             <SearchForm
                 handelChangeCheckbox={handelChangeCheckbox}

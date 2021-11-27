@@ -11,6 +11,9 @@ function Header(props) {
             <Navigation 
             isLoggedIn={props.isLoggedIn}
             onAddPlace={props.onAddPlace}
+            color={props.color}
+            account={props.account}
+            image={props.image}
             />
             
         </header>

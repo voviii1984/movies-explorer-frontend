@@ -96,6 +96,10 @@
     .header__menu-burger:hover {
         opacity: 0.7;
     }
+
+    .burger-color {
+        background-color: #073042;
+    }
 }
 
 @media screen and (max-width: 390px) {

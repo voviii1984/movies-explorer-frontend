@@ -365,7 +365,10 @@ function postNewMovies(movie) {
           </Route>
 
           <Route exact path='/'>
-            <Main />
+            <Main 
+            isLoggedIn={isLoggedIn}            
+            onAddPlace={handleAddPlaceClick}
+            />
           </Route>
           
           <ProtectedRoute 
