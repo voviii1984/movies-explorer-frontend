@@ -1,7 +1,6 @@
-import { optionsMain } from '../components/Constants/Constant';
+// import { optionsMain } from '../components/Constants/Constant';
 // export const BASE_URL = optionsMain.baseUrl;
-// export const BASE_URL = 'https://api.voviii1984.diplom.nomoredomains.work';
-export const BASE_URL = 'http://localhost:3000';
+export const BASE_URL = 'https://api.voviii1984.diplom.nomoredomains.work';
 
 const checkResponse = (response) => {
   return response.ok ? response.json() : Promise.reject(new Error(`Ошибка ${response.status}: ${response.statusText}`));

@@ -3,7 +3,6 @@ export const optionsMovies = {
   };
 
   export const optionsMain = {
-    // baseUrl: 'https://api.voviii1984.diplom.nomoredomains.work',
-    baseUrl: 'http://localhost:3000',
+    baseUrl: 'https://api.voviii1984.diplom.nomoredomains.work',    
   };
   
