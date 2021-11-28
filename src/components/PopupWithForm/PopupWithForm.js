@@ -13,7 +13,7 @@ function PopupWithForm(props) {
                     <li>
                         <Link to="/profile" className="profile__text" onClick={props.onClose}>
                             Аккаунт
-                            <div className="profile__account"></div>
+                            <div className="profile__account_all-image"></div>
                         </Link>
                     </li>
                 </ul>

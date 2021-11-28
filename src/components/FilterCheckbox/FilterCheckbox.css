@@ -1,6 +1,7 @@
 .short__films {
     display: flex;
-    margin-left: 41px;
+    margin: auto 0 auto 41px;
+    width: 208px;
 }
 
 .short__films-text {
@@ -9,36 +10,58 @@
     font-size: 13px;
     line-height: 18px;
     color: #FFFFFF;
-}
-
-.short__films_switch {
-    width: 36px;
-    height: 20px;
-    background-repeat: no-repeat;
-    border: 0;
-    background-color: #202020;
-    margin-top: 12px;
-    margin-left: 14px;
     cursor: pointer;
+    position: relative;
 }
 
-.short__films_switch:hover {
+.short__films-text::after {
+    content: "";
+    width: 34px;
+    height: 14px;
+    background-color: #EBEBEB;
+    border-radius: 20px;
+    position: absolute;
+    top: 3px;
+    right: -48px;
+    transition-duration: 350ms;
+    
+}
+
+.short__films-text::before {
+    content: "";
+    width: 10px;
+    height: 10px;
+    background-color: #F5F5F5;
+    border-radius: 50%;
+    position: absolute;
+    right: -26px;
+    top: 5px;
+    z-index: 1;
+    transition-duration: 350ms;
+}
+
+.switch {
+    display: none;
+}
+
+.switch:checked + .short__films-text::after {
+    background-color: #2BE080;
+}
+
+.switch:checked + .short__films-text::before {
+    right: -46px;
+    background-color: #FFFFFF;
+}
+
+.short__films-text:hover {
     opacity: 0.7;
-}
-
-.short__films_switch-on {
-    background-image: url('../../images/smalltumbon.png');    
-}
-
-.short__films_switch-off {
-    background-image: url('../../images/smalltumboff.png');    
 }
 
 @media screen and (max-width: 768px) {
     .short__films {
         justify-content: center;
-        margin-top: 38px;
-        margin-left: 0;
+        margin: 38px auto 0 auto;
+        
     }
 
     .short__films-text {

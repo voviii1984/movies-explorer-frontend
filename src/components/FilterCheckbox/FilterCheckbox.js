@@ -1,10 +1,14 @@
 import './FilterCheckbox.css'
 
-function FilterCheckbox () {
+function FilterCheckbox ({isShortMovies, handelChangeCheckbox }) {
+    function handleChange() {
+        handelChangeCheckbox();
+      }
+
     return (
         <div className="short__films">
-            <p className="short__films-text">Короткометражки</p>
-            <button type="submit" className="short__films_switch short__films_switch-on"></button>
+            <input type="checkbox" id="switchFor" onChange={handleChange} checked={isShortMovies} className="switch" />
+            <label for="switchFor" className="short__films-text">Короткометражки</label>
         </div>
     )
 }

@@ -11,7 +11,7 @@
 }
 
 .movies__card_about {
-    padding: 22px 0 22px 22px;
+    padding: 22px 22px 22px 22px;
 }
 
 .movies__card_about_name {
@@ -60,6 +60,8 @@
     width: 220px;
     height: 122px;
     padding: 6px 6px 6px 0;
+    vertical-align: middle;
+    object-fit: cover;
 }
 
 .movies__delete {
@@ -76,6 +78,13 @@
     opacity: 0.8;
 }
 
+@media screen and (max-width: 985px) {
+    .movies__card_about_name {
+        font-size: 12px;
+        line-height: 15px;        
+    }
+}
+
 @media screen and (max-width: 480px) {
     .movies__card {
         display: grid;
@@ -87,11 +96,6 @@
         padding: 14px 16px 12px 14px;
         display: flex;
         justify-content: space-between;
-    }
-
-    .movies__card_about_name {
-        font-size: 12px;
-        line-height: 15px;        
     }
 
     .movies__card_about_time {

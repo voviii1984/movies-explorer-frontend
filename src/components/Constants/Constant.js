@@ -1,9 +1,8 @@
-export const options = {
-    baseUrl: 'http://localhost:3000',
-    
-    headers: {
-      'Accept': 'application/json',
-      'Content-Type': 'application/json'
-    }
+export const optionsMovies = {
+    baseUrl: 'https://api.nomoreparties.co',
   };
-    
+
+  export const optionsMain = {
+    baseUrl: 'https://api.voviii1984.diplom.nomoredomains.work',    
+  };
+  

@@ -16,7 +16,9 @@ function Main(props) {
             <Header 
             page="main"
             isLoggedIn={props.isLoggedIn}
-            style={{background: "red"}}
+            color="burger-color"          
+            onAddPlace={props.onAddPlace}
+            image="main-image"
             />
             <Promo sectionRef={sectionRef} />
 

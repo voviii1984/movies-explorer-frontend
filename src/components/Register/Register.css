@@ -21,7 +21,10 @@
 }
 
 .form__window_button-signup {
-    margin-top: 134px;
+  margin-top: 134px;
+}
+
+.form__window_button {    
     width: 396px;
     height: 45px;
     font-weight: 500;
@@ -31,6 +34,21 @@
     border: none;
     background-color: #4285F4;
     border-radius: 3px;
+    cursor: pointer;
+}
+
+.form__window_button:hover {
+    opacity: 0.7;
+}
+
+.form__window_button-novalid {
+    background-color: #F8F8F8;
+    color: #000000;
+    cursor: not-allowed;
+}
+
+.form__window_button-novalid:hover {
+    opacity: 1;
 }
 
 .register__form-text {
@@ -63,8 +81,11 @@
 @media screen and (max-width: 460px) {
     .form__window_button-signup {
         margin-top: 222px;
-        width: 260px;
-        font-size: 12px;
-        line-height: 15px;
+    }
+
+    .form__window_button {
+      width: 260px;
+      font-size: 12px;
+      line-height: 15px;
     }
 }

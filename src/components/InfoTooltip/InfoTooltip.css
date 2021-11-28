@@ -1,0 +1,91 @@
+.popup__tooltip {
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding-top: 195px;
+    align-items: flex-start;
+    opacity: 0;
+    transition: visibility 0.5s, opacity 0.5s;
+    visibility: hidden;
+  }
+
+  .popup__tooltip_opened {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  .popup__tooltip-container {
+    background: #FFFFFF;
+    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+    max-width: 430px;
+    width: 100%;
+    box-sizing: border-box;
+    position: relative;
+  }
+
+  .popup__tooltip-image {
+    margin: 60px auto 0 auto;
+    display: flex;
+}
+
+.popup__tooltip-text {
+    font-style: normal;
+    font-weight: 900;
+    font-size: 24px;
+    line-height: 29px;
+    margin: 0;
+    padding: 34px 64px 0 36px;
+  }
+
+.popup__tooltip-text_title {
+    text-align: center;
+    margin: 32px auto 60px auto;
+    padding: 0;
+    max-width: 400px;
+}
+
+.popup__tooltip-close {
+    position: absolute;
+    width: 48px;
+    height: 48px;
+    background: url('../../images/closeicon.png');
+    top: -49px;
+    right: -39px;
+    cursor: pointer;
+    border: 0;
+    outline: 0;
+  }
+  
+.popup__tooltip-close:hover {
+    opacity: 0.7;
+}
+  
+@media screen and (max-width: 618px) {
+    .popup__tooltip {
+      padding-top: 123px;
+    }
+
+    .popup__tooltip-container {
+        max-width: 282px;
+    }
+
+    .popup__tooltip-text {
+        font-size: 18px;
+        line-height: 22px;
+        padding: 25px 22px 0 22px;
+    }
+
+    .popup__tooltip-close {
+        background: url('../../images/closeicon2.png');
+        width: 29px;
+        height: 29px;
+        top: -51px;
+        right: 8px;
+    }
+}
