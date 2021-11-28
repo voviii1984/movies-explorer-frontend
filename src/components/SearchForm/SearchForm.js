@@ -45,7 +45,7 @@ function SearchForm({
                 Не указано в поиске слово
                 </span>
             <form className="search__form" noValidate onSubmit={onSubmit}>
-                <input type="text" id="inputName" name="input" placeholder="Фильм" className="search__form-text" onChange={handleChangeInputSearch} required onblur="none"/>
+                <input type="text" autocomplete="on" id="inputName" name="input" placeholder="Фильм" className="search__form-text" onChange={handleChangeInputSearch} required onblur="none"/>
                 <button type="submit" className="search__form_button" value="Отправить на сервер" id="search__submit"></button>
             </form>
 
